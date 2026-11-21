@@ -1,0 +1,30 @@
+# Secrets, local config and billing exports
+.env
+.env.*
+!.env.example
+*.local.*
+ai-credits*.csv
+
+# Dependencies and build outputs
+node_modules/
+dist/
+[Bb]in/
+[Oo]bj/
+.vs/
+.local/
+
+# Test and Playwright artifacts
+test-results/
+playwright-report/
+.playwright-mcp/
+playwright_chromiumdev_profile-*
+playwright-transform-cache
+node-compile-cache
+.npm-cache/
+
+# Generated analysis and temporary agent state
+.project-map/
+.orchestrator/
+.worktrees/
+.cursor/
+.claude/
