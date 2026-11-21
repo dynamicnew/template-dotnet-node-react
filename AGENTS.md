@@ -36,9 +36,9 @@ file under 70 lines.
   PID (or a repo lock script with `-WhatIf` if present), never image name.
   Remove own scratch files and dead code.
 - **Branches & commits.** Develop on feature branches, merge into `dev` (then
-  delete the merged local branch with `git branch -d`), and PR `dev` into
-  `main`. Commit verified batches (main agent / coordinator only; subagents do
-  not commit). Do not push or rewrite history unless asked.
+  delete the merged branch with `git branch -d`), and stop at `dev`; only PR
+  `dev` into `main` when asked to release. Commit verified batches (main agent /
+  coordinator only; subagents never commit). Never push/rewrite unless asked.
 - **Ask first.** Stop and ask before changing IDE, user, account or billing
   settings; accessing signed-in accounts; deploying; elevating; or destructive
   actions.
