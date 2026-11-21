@@ -1,5 +1,5 @@
 ---
-applyTo: "web/**, docs/product/**"
+applyTo: "web/**,docs/product/**"
 description: Design, accessibility, motion, audio, and telemetry honesty rules for browser UI and machine-monitoring views.
 ---
 

@@ -1,5 +1,5 @@
 ---
-applyTo: "web/**, server/**, shared/**, src/**"
+applyTo: "web/**,server/**,shared/**,src/**,tests/**"
 description: Source layout, naming, shared limits, and generated .NET-to-TypeScript contract conventions.
 ---
 

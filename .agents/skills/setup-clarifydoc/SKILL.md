@@ -45,9 +45,10 @@ Create only the assets appropriate for this repository:
 1. **`.gitignore`:** ensure `.clarifydoc/` is ignored so generated analysis
    caches are never committed or hand-edited.
 2. **Conditional rules (both platforms, keeping `AGENTS.md` <= ~70 lines):**
-   - Antigravity: `.agents/rules/clarifydoc.md` (`trigger: model_decision`).
+   - Antigravity: `.agents/rules/clarifydoc.md` (`trigger: model_decision`
+     and a clear `description:` so Antigravity knows when to load it).
    - GitHub Copilot: `.github/instructions/clarifydoc.instructions.md`
-     (`applyTo: "web/**, server/**, shared/**, src/**"`).
+     (`applyTo: "web/**,server/**,shared/**,src/**"`).
    - Rules to include:
      - Call `clarifydoc_status` first via one provider and verify the server is
        bound to this repository root. If `clarifydoc_status` reports a

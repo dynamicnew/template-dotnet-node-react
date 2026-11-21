@@ -1,14 +1,21 @@
 ---
 name: coordinate-task
-description: Lead a multi-step change from the Antigravity main agent, delegate bounded work to subagents (research, implementer, reviewer, handoff), and verify the result in Docker. Use for tasks spanning multiple files or independent workstreams.
+description: Lead a multi-step change from the main agent (Antigravity) or Coordinator agent (GitHub Copilot), delegate bounded work to subagents, and verify the result in Docker. Use for tasks spanning multiple files or independent workstreams.
 ---
 
 # Coordinate a multi-step change
 
 Follow [AGENTS.md](../../../AGENTS.md) and [docs/ai/cost.md](../../../docs/ai/cost.md).
-Run coordination from the main agent (which owns `invoke_subagent` and
-`manage_subagents`) and continue until the outcome is verified or a real blocker
-prevents safe progress.
+In **GitHub Copilot**, use the `Coordinator` agent
+([.github/agents/coordinator.agent.md](../../../.github/agents/coordinator.agent.md),
+which delegates to `Explorer`, `Implementer`, `Reviewer`, and
+`Project Handoff`). The `invoke_subagent`/`manage_subagents` tools and
+`flash_lite`/`flash`/`inherit`/`pro` model tiers below apply to **Google
+Antigravity**'s main agent.
+
+Run coordination from the main agent (Antigravity) or `Coordinator` (Copilot)
+and continue until the outcome is verified or a real blocker prevents safe
+progress.
 
 1. Verify the working directory, branch, and git status before delegating, and
    pass them to subagents when relevant.

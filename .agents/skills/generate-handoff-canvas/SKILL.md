@@ -59,8 +59,9 @@ Resolve the repository root from `extension.mjs` as:
   for explicitly allowlisted Build / Run / Server / Docker-Testing batches:
   - One extension-wide batch at a time; checkbox confirmation cleared on any
     selection or access-mode change; server independently validates every batch.
-  - Before Clean/Build, runs the checkout's lock-cleanup helper (`-WhatIf`
-    preview, then exact PID/start-time stop — never kill by image name).
+  - Before Clean/Build, if the repository provides a lock-cleanup helper script,
+    run it with `-WhatIf` preview first, then stop only by confirmed exact
+    PID/start-time (never kill by image name).
   - Test actions run **only in Docker** (never host-native test fallbacks).
   - Tracks retained panel-started launchers by process exit (not stdout pipe
     closure), sends graceful stdin quit rather than force killing, caps console
@@ -69,8 +70,9 @@ Resolve the repository root from `extension.mjs` as:
 - `clarifydoc.mjs`: Collapsed **ClarifyDoc** MCP workbench (`/api/clarifydoc`)
   using a fixed allowlist, live schema validation, `--no-auto-analyze --no-cold-start`
   reads, repo-path confinement, and fresh confirmation before `analyze`/`diff`.
-- `appearance.mjs` + `design-tokens.css` / `design-effects.css`: Optional
-  read-only sync with saved app appearance tokens (`/api/appearance`).
+- Optional read-only theme sync: if the project defines saved UI appearance
+  tokens, the panel may mirror them read-only while keeping light/dark,
+  reduced-motion, and forced-colors fallbacks intact.
 
 ### Non-negotiable security invariants
 

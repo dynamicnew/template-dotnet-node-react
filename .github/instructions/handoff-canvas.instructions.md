@@ -1,5 +1,5 @@
 ---
-applyTo: ".github/extensions/**, .agents/plugins/**"
+applyTo: ".github/extensions/**,.agents/plugins/**"
 description: Architecture, security, and Docker verification rules for project-local handoff canvas panels.
 ---
 

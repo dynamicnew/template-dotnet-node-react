@@ -33,10 +33,12 @@ file under 70 lines.
 - **Safety & clean.** Preserve uncommitted work. Test destructive paths only on
   owned disposable fixtures; extra editor/browser profiles need dedicated
   `--user-data-dir` and `--extensions-dir`. Clear locked build files by exact
-  PID or lock script, never image name. Remove own scratch files and dead code.
-- **Branches & commits.** Develop on feature branches, merge into `dev`, then
-  PR `dev` into `main`. Commit verified batches (main agent / coordinator only;
-  subagents do not commit). Do not push or rewrite history unless asked.
+  PID (or a repo lock script with `-WhatIf` if present), never image name.
+  Remove own scratch files and dead code.
+- **Branches & commits.** Develop on feature branches, merge into `dev` (then
+  delete the merged local branch with `git branch -d`), and PR `dev` into
+  `main`. Commit verified batches (main agent / coordinator only; subagents do
+  not commit). Do not push or rewrite history unless asked.
 - **Ask first.** Stop and ask before changing IDE, user, account or billing
   settings; accessing signed-in accounts; deploying; elevating; or destructive
   actions.

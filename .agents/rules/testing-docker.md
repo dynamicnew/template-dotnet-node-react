@@ -15,9 +15,9 @@ description: Rules for Docker-only test execution, test layout, evidence tiers, 
   Windows qualification requires an approved disposable Windows VM and an
   explicit user exception to Docker-only testing; never substitute fixtures.
 - Distinguish evidence tiers honestly: unit/mock passes, isolated browser
-  fixtures, development-host runs, fault-injection verifier runs (pass means
-  faults were caught, not healthy app), and real installed acceptance are
-  separate gates.
+  fixtures, development-host runs, optional fault-injection/negative verifier
+  runs (passing negative checks proves detection, not healthy runtime
+  behavior), and real installed acceptance are separate gates.
 - Real read-only UI acceptance must attach to an explicit readiness target,
   fail clearly when readiness is missing (never fall back to fake data), and
   observe console errors, uncaught exceptions, failed requests, and backend

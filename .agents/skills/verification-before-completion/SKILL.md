@@ -21,7 +21,7 @@ containers; never fall back to host-native tests or claim unrun suites passed.
 | UI fixture worked | Isolated container browser run with zero unexpected console/request errors |
 | Dev-host workflow worked | Real read-only dev host, gateway, and worker (not installed qualification) |
 | Installed / native worked | Installed UI, gateway, and worker in an approved disposable VM (not dev or fixture) |
-| Fault verifier passed | Injected faults were caught (`failed-as-required` proves detection, not healthy app) |
+| Fault verifier passed (if present) | Injected faults were caught (passing negative checks proves detection, not healthy runtime behavior) |
 | Task complete | Requested outcomes verified and persisted, with no concealed remaining work |
 
 ## Check runtime health alongside assertions
